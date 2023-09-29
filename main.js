@@ -25,6 +25,17 @@ function showUserOnScreen(user){
         localStorage.removeItem(user.name);
         parentElem.removeChild(childElem);
     }
+
+    let editBtn = document.createElement('input');
+    editBtn.type = 'button';
+    editBtn.value = 'Edit';
+    editBtn.onclick = () => {
+        localStorage.removeItem(user.name);
+        parentElem.removeChild(childElem);
+        document.getElementById('name').value = user.name;
+        document.getElementById('email').value = user.email;
+    }
     childElem.appendChild(deleteBtn);
+    childElem.appendChild(editBtn);
     parentElem.appendChild(childElem);
 }
